@@ -1,0 +1,172 @@
+{
+  "id": "102019bad36f5bc7648b3c1805bf4fcef9a",
+  "version": "102019bad36f5bc7109b99a8929ec378011",
+  "schema": {
+    "name": "seo_setting",
+    "description": "Stores global SEO and social media configuration for the site.",
+    "fields": [
+      {
+        "name": "id",
+        "description": "Unique identifier for each data of this entity.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Identifier"
+        }
+      },
+      {
+        "name": "data_creator",
+        "description": "id of the user who creates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "data_updater",
+        "description": "id of the user who updates the record",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 2,
+          "reason": "Audit Trail"
+        }
+      },
+      {
+        "name": "create_time",
+        "description": "create time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Timestamp"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "update_time",
+        "description": "update time in timestamp unix",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "System Timestamp"
+        },
+        "format": "timestamp"
+      },
+      {
+        "name": "setting_key",
+        "description": "Unique string identifier for the setting configuration (e.g. __seo_settings__).",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Configuration Key"
+        }
+      },
+      {
+        "name": "site_title",
+        "description": "Global title of the site for SEO.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public SEO Data"
+        }
+      },
+      {
+        "name": "meta_description",
+        "description": "Global meta description for the site.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public SEO Data"
+        }
+      },
+      {
+        "name": "og_title",
+        "description": "Open Graph title used for social media sharing.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public Social Data"
+        }
+      },
+      {
+        "name": "og_description",
+        "description": "Open Graph description used for social media sharing.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public Social Data"
+        }
+      },
+      {
+        "name": "og_image_url",
+        "description": "URL of the default image used for Open Graph sharing.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public Social Data"
+        }
+      },
+      {
+        "name": "canonical_url",
+        "description": "Base canonical URL for the site.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public SEO Data"
+        }
+      },
+      {
+        "name": "twitter_handle",
+        "description": "Optional Twitter handle associated with the site cards.",
+        "type": 1,
+        "compliance": {
+          "confidentiality": 1,
+          "reason": "Public Social Data"
+        },
+        "nullable": true
+      }
+    ],
+    "indexes": [
+      {
+        "fields": [
+          "id"
+        ],
+        "unique": true,
+        "primary": true,
+        "order": false
+      },
+      {
+        "fields": [
+          "data_creator"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "data_updater"
+        ],
+        "order": false
+      },
+      {
+        "fields": [
+          "setting_key"
+        ],
+        "unique": true,
+        "order": false
+      }
+    ]
+  },
+  "task": {
+    "id": "6963a39127dae773f88ecfb3",
+    "root": "6963a39127dae773f88ecfb3",
+    "project": "6963a39127dae773f88ecfb2",
+    "user": "08c153c0-30a1-70cc-e3ab-6b8a87964898"
+  },
+  "namespace": {
+    "id": "01987547fc6c72ecb453bd2736bd4ea0",
+    "tenant": 2,
+    "name": "global-1",
+    "default": true
+  },
+  "revision": 1
+}
